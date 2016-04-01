@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7261755EFBD1E39C71E2509F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D42A5D324726A6FD9C0C34 /* libPods.a */; };
-		8B428CAC1CA81D2700AA17D3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B428CAA1CA81D2700AA17D3 /* ListTableViewCell.swift */; };
-		8B428CAD1CA81D2700AA17D3 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B428CAB1CA81D2700AA17D3 /* ListTableViewCell.xib */; };
 		8B5CCA9B1CA5799B00FF7D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CCA9A1CA5799B00FF7D71 /* AppDelegate.swift */; };
 		8B5CCA9D1CA5799B00FF7D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CCA9C1CA5799B00FF7D71 /* ViewController.swift */; };
 		8B5CCAA01CA5799B00FF7D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CCA9E1CA5799B00FF7D71 /* Main.storyboard */; };
@@ -22,8 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8B428CAA1CA81D2700AA17D3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		8B428CAB1CA81D2700AA17D3 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		8B5CCA971CA5799B00FF7D71 /* Book_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5CCA9A1CA5799B00FF7D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B5CCA9C1CA5799B00FF7D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +94,6 @@
 				8B5CCAAD1CA650AB00FF7D71 /* BookListTableViewCell.xib */,
 				8BAD80BC1CA65277000B45A9 /* BookListViewController.swift */,
 				8BAD80C51CA65641000B45A9 /* NetManager.swift */,
-				8B428CAA1CA81D2700AA17D3 /* ListTableViewCell.swift */,
-				8B428CAB1CA81D2700AA17D3 /* ListTableViewCell.xib */,
 				8B5CCA9E1CA5799B00FF7D71 /* Main.storyboard */,
 				8B5CCAA11CA5799B00FF7D71 /* Assets.xcassets */,
 				8B5CCAA31CA5799B00FF7D71 /* LaunchScreen.storyboard */,
@@ -173,7 +167,6 @@
 				8B5CCAA51CA5799B00FF7D71 /* LaunchScreen.storyboard in Resources */,
 				8B5CCAA21CA5799B00FF7D71 /* Assets.xcassets in Resources */,
 				8B5CCAA01CA5799B00FF7D71 /* Main.storyboard in Resources */,
-				8B428CAD1CA81D2700AA17D3 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +230,6 @@
 				8B5CCAAE1CA650AB00FF7D71 /* BookListTableViewCell.swift in Sources */,
 				8BAD80C61CA65641000B45A9 /* NetManager.swift in Sources */,
 				8B5CCA9B1CA5799B00FF7D71 /* AppDelegate.swift in Sources */,
-				8B428CAC1CA81D2700AA17D3 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

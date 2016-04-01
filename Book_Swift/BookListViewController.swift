@@ -14,6 +14,8 @@ class BookListViewController: UIViewController, UITableViewDelegate,UITableViewD
     var bookListData:[[String:NSObject]]? = []
     let indetifier  = "BoollistCell"
     let bookListTableView = UITableView()
+    var bookHeight:CGFloat = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,28 +63,55 @@ class BookListViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:BookListTableViewCell = tableView.dequeueReusableCellWithIdentifier(self.indetifier, forIndexPath: indexPath) as! BookListTableViewCell
 
-
+        //图片 和图书名字
         let imgaes =  self.bookListData![indexPath.row]["images"] as! [String:NSObject]
         let urlString = imgaes["small"] as? String
         let url:NSURL? = NSURL(string: urlString!)
-        
         cell.introImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "23"))
         let name = self.bookListData?[indexPath.row]["title"] as! String
+        cell.nameLabel.font = UIFont.boldSystemFontOfSize(17)
         cell.nameLabel.text = name
+        
+        let rating = self.bookListData?[indexPath.row]["rating"] as! [String:NSObject]
+        let aver = rating["average"] as! String
+        let averInt = Double(aver)
+        
+        
+        for i in 0...4 {
+           let starImage = UIImageView(frame: CGRectMake(CGFloat(20 + 34*i), 3, 30, 30))
+            if Double((i+1)*2) <= averInt  {
+               starImage.image = UIImage(named: "star_yes")
+            } else {
+                starImage.image = UIImage(named: "star_no")
+            }
+
+            
+            cell.starView .addSubview(starImage)
+        }
+        //作者，出版社，出版日期
+        let authors = self.bookListData?[indexPath.row]["author"] as? [String]
+        let author = authors?.joinWithSeparator("\\")
+        let publisher = self.bookListData?[indexPath.row]["publisher"] as! String
+        let pubdate = self.bookListData?[indexPath.row]["pubdate"] as! String
+        cell.infoLabel.text =  author! + "\\" + publisher + "\\" + pubdate
+        cell.infoLabel.numberOfLines = 0;
+        cell.infoLabel.font = UIFont.systemFontOfSize(15)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let label = UILabel()
         
         let authors = self.bookListData?[indexPath.row]["author"] as? [String]
         let author = authors?.joinWithSeparator("\\")
         let publisher = self.bookListData?[indexPath.row]["publisher"] as! String
         let pubdate = self.bookListData?[indexPath.row]["pubdate"] as! String
-        
-        
-        cell.infoLabel.text =  author! + "\\" + publisher + "\\" + pubdate
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        label.text =  author! + "\\" + publisher + "\\" + pubdate
+        label.numberOfLines = 0
+        label.font = UIFont.systemFontOfSize(15)
+        let newsize:CGSize = label.sizeThatFits(CGSizeMake(self.view.frame.size.width - 94, 9999))
+
+        return newsize.height + 76
     }
     
     
