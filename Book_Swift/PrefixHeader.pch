@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  Book_Swift
+//
+//  Created by 任金波 on 16/4/3.
+//  Copyright © 2016年 任金波. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#import "Define.swift"
+#import "BookListTableViewCell.swift"
+
+
+#endif /* PrefixHeader_pch */

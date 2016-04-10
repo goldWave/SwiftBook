@@ -33,7 +33,7 @@ class BookListViewController: UIViewController, UITableViewDelegate,UITableViewD
             //            print(success)
             let dic = success as? [String:NSObject]
             self.bookListData = dic!["books"] as? [[String:NSObject]]
-            print(self.bookListData![0])
+//            print(self.bookListData![0])
             self.bookListTableView.reloadData()
             }) { (error) -> Void? in
                 print(error)
@@ -114,5 +114,11 @@ class BookListViewController: UIViewController, UITableViewDelegate,UITableViewD
         return newsize.height + 76
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailVC  = BookDetailViewController()
+        detailVC.bookDetail = self.bookListData?[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
+    }
 }
